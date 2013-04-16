@@ -64,16 +64,16 @@ if(isset($mp_option['gentle_sidebar']) && isset($mp_option['gentle_sidebar']['ra
 				// displays widgets when they are not specified in custom & Main Footer
 			?>
 				<li class="widget widget_3">
-					<h2 class="widget_title footer_title">About</h2>
-					<div class="textwidget">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis leo at mauris faucibus suscipit. Sed orci arcu, tincidunt at commodo in, consectetur sed enim. Vestibulum aliquet justo rutrum magna tincidunt fringilla. In eget nisl in justo mattis accumsan eu nec magna. Pellentesque pellentesque pharetra lacus, eget aliquet mi mattis eu.
+					<h2 class="widget_title footer_title">About TIVIT</h2>
+					<div class="textwidget">TIVIT’s overriding aim is to further increase the pace of development of Finnish know-how, which in turn will ensure growth of the business activities of the whole sector, and therein the creation of new jobs. As one of Finland’s Strategic Centres for Science, Technology and Innovation (SHOKs) – TIVIT’s role is not only to bring together and systematise research and development, but also to ensure that the results of research are understood, applied and adopted as part of companies’ business practice faster than ever before.
 					</div>
 				</li>
-				<li class="widget widget_3"><h2 class="widget_title footer_title">Categories</h2>
+				<li class="widget widget_3"><h2 class="widget_title footer_title">Recent Comments</h2>
 					<ul>
 						<?php wp_list_categories('show_count=1&title_li='); ?>
 					</ul>
 				</li>
-				<li class="widget widget_3"><h2 class="widget_title sidebar_widget_title">Archives</h2>
+				<li class="widget widget_3"><h2 class="widget_title sidebar_widget_title">Photostream</h2>
 					<ul>
 						<?php wp_get_archives('type=monthly'); ?>
 					</ul>
