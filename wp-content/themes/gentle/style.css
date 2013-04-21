@@ -1,13 +1,12 @@
 /*
 
-Theme Name: Gentle (shared on themelock.com)
-Theme URI: http://www.4mudi.com
-Description: 更多汉化主题、主题升级、问题咨询请访问：<strong><a href="http://www.4mudi.com">http://www.4mudi.com</a></strong>或我的<a href="http://wordpresszhuti.taobao.com">淘宝店</a>
-Author: massivePixelCreation
-Author URI: http://www.4mudi.com
+Theme Name: ICTAlliance
+Theme URI: http://www.ictalliance.org
+Description: This the customized theme extended from Gentle theme
+Author: Innolake
+Author URI: http://www.innolake.com
 License: Commercial
 License URI: http://themeforest.net/licenses/regular_extended
-Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Version: 1.0
 
 */
@@ -70,7 +69,7 @@ body {
 
 i { font-style: italic!important; }
 
-a { text-decoration: none; border: none; background: transparent;}
+a { text-decoration: none; border: none; background: transparent; outline: none; }
 a img { border-style: none; }
 
 strong { font-weight: bold; }
@@ -195,6 +194,10 @@ hr {
 	margin-top: 10px;
 }
 
+#mpc-header #gentle-logo img {
+	width:350px;
+}
+
 #mpc-header #searchform {
 	position: absolute;
 	right: 20px;
@@ -266,7 +269,48 @@ hr {
 
 #mpc-nav li.last-item > a { border: none; }
 
+/*-----------------------------------------------------------------------------------*/
+/*	Slides settings
+/*-----------------------------------------------------------------------------------*/
 
+.mpc_ls_slides { font-family: SourceSansProRegular, Helvetica, Arial, sans-serif; }
+
+.mpc_ls_slides h2, 
+.mpc_ls_slides h3, 
+.mpc_ls_slides h4, 
+.mpc_ls_slides h5 { font-family: Raleway, Helvetica, Arial, sans-serif;  font-weight: 200;}
+
+.ls-slide01 {color: #FFFFFF; white-space:nowrap; }
+.ls-slide01:hover { color: #FFFFFF!important; }
+.ls-slide01:hover span { color: #ff3c10!important; }
+
+.slide02 p { width: 430px; color: #865966;  text-align: right; }
+.slide02 h2, .slide02 h4 { color: #7B505D; }
+
+.slide02 a { color: #865966; }
+.slide02 a:hover { color: #865966!important; }
+.slide02 a:hover span { color: #9A433F; }
+
+.mpc_ls_slide_item a { white-space:nowrap;}
+
+/*-----------------------------------------------------------------------------------*/
+/*	Home page settings
+/*-----------------------------------------------------------------------------------*/
+#gentle_latest_portfolio .gentle-recent-portflio h5 {
+    margin-top: 0;
+}
+
+#gentle_latest_portfolio .gentle-recent-portflio h5 a {
+    font-size: 16px;
+}
+
+.gentle-recent-post .recent-post-title h5 a {
+    font-size: 14px;
+}
+
+.gentle-portfolio-content {
+    height: 220px;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	Page settings
@@ -302,6 +346,10 @@ hr {
 
 #mpc-slider-shortcode iframe { display:block; }
 
+.gentle-page-content .tabs ul li a {
+    font-size: 14px;
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*	Blog Settings
 /*-----------------------------------------------------------------------------------*/
@@ -314,8 +362,6 @@ hr {
 	background: #ffffff;
 	overflow: hidden;
 }
-
-
 
 #mpc-page-content.blog div.post .mpc-post-thumbnail {
 	position: relative;
@@ -581,6 +627,7 @@ hr {
 #mpc-page-content.gentle-single-page article.post .mpc-page-title {
 	margin-top: 0px;
 	margin-bottom: 0px;
+        clear: both;
 }
 
 #mpc-page-content.gentle-single-page article.post small a { color: #515151; }
@@ -900,7 +947,7 @@ hr {
 
 #mpc-page-content { 
 	width: 649px;
-	padding-right: 28px;
+	padding-right: 27px;
 	border-right: 1px solid #DDD;
 	padding-bottom: 20px;
 }

@@ -128,7 +128,7 @@ if($sidebar_position == '')
 				
 				<div class="gentle-related-posts">
 					<?php if($post_type == 'portfolio' && $mp_option[$shortname.'_related_portfolio'] == "1") { ?> 
-						<h3><?php _e('Related Projects', 'gentle');?></h3>
+						<h3><?php _e('Related Events', 'gentle');?></h3>
 						<?php 
 						
 						$postID = $post->ID;
