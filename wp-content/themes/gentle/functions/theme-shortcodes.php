@@ -603,7 +603,7 @@ function mpc_recent_projects($atts, $content = null) {
 			
 	if($query->have_posts()){
 		
-		$return = '<ul id="gentle_latest_projects_jcarousel" class="jcarousel-skin-gentle-projects">';
+		$return = '<ul id="gentle_latest_projects_jcarousel" class="jcarousel-skin-gentle-posts">';
 		$index = 0;
 		while($query->have_posts()) {
 			$query->the_post(); 

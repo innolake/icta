@@ -955,7 +955,7 @@ hr {
 
 
 #mpc-page-content.sidebar-right { float:left; }
-#mpc-page-content.sidebar-left { float:right; padding-right: 0px; padding-left: 28px; border-left: 1px solid #DDD; border-right: none; left: -1px; position: relative; }
+#mpc-page-content.sidebar-left { float:right; padding-right: 0px; padding-left: 27px; border-left: 1px solid #DDD; border-right: none; left: -1px; position: relative; }
 
 #mpc-page-content.sidebar-none { width: 960px; }
 
