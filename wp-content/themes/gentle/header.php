@@ -38,7 +38,8 @@
 						echo '<ul id="nav">';
 							wp_list_pages('title_li='); 
 						echo '</ul>';
-					} ?> <!-- end menu --> 
+					} ?> <!-- end menu -->
+                                        <?php do_action('oa_social_login'); ?>
 					<span class="nav-bar"></span>
 					<?php get_search_form(); ?>
 					

@@ -269,6 +269,20 @@ hr {
 
 #mpc-nav li.last-item > a { border: none; }
 
+#mpc-header .oneall_social_login {
+    bottom: 30px;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    text-align: left;
+    width: 200px;
+    height: 80px;   
+}
+
+.oneall_social_login .plugin .footer #branding {
+    display: none;
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*	Slides settings
 /*-----------------------------------------------------------------------------------*/
@@ -292,6 +306,26 @@ hr {
 .slide02 a:hover span { color: #9A433F; }
 
 .mpc_ls_slide_item a { white-space:nowrap;}
+
+.mpc_ls_slides h2 { 
+    color: #FFFFFF;
+    font-size: 42px;
+    height: 42px;
+    line-height: 42px;
+    outline-width: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.mpc_ls_slides h5 {
+    color: #FFFFFF;
+    font-size: 24px;
+    height: 24px;
+    line-height: 24px;
+    outline-width: 0;
+    padding: 0;
+    white-space: nowrap;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	Home page settings
