@@ -986,7 +986,13 @@ hr {
 	padding-bottom: 20px;
 }
 
+#tag_cloud-2 a {
+    color: #333333;
+}
 
+#tag_cloud-2 a:hover {
+    background: none repeat scroll 0 0 #DDDDDD;
+}
 
 #mpc-page-content.sidebar-right { float:left; }
 #mpc-page-content.sidebar-left { float:right; padding-right: 0px; padding-left: 27px; border-left: 1px solid #DDD; border-right: none; left: -1px; position: relative; }
@@ -1247,6 +1253,14 @@ hr {
 	display: none;
 	margin-top: 15px;
 	margin-bottom: 20px; 
+}
+
+#gallery-1 img.attachment-thumbnail,
+#gallery-2 img.attachment-thumbnail,
+#gallery-3 img.attachment-thumbnail {
+    border: none;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 
