@@ -701,6 +701,166 @@ function mpc_recent_projects($atts, $content = null) {
 
 add_shortcode('mpc_recent_projects', 'mpc_recent_projects');
 
+
+/*-----------------------------------------------------------------------------------*/
+/*	X. Recent Activities
+/*-----------------------------------------------------------------------------------*/
+
+function mpc_recent_activities($atts, $content = null) {
+	extract(shortcode_atts(array(
+    'number' => '4',
+    'post' => ''  
+    ), $atts));
+
+	global $page_id;
+
+	$mp_option = gentle_get_global_options();
+
+	$sidebar_position = '';
+
+	if(isset($mp_option['gentle_sidebar']) && isset($mp_option['gentle_sidebar']['radio_sb_' .$page_id])) {
+		$sidebar_position = $mp_option['gentle_sidebar']['radio_sb_' .$page_id];
+	} 
+
+	if($sidebar_position == '') 
+		$sidebar_position = 'right';
+
+	$scroll = 1;
+	if($sidebar_position == 'none') 
+		$scroll = 2;
+
+    ?>
+    
+   
+	
+    <?php
+	$return = '';
+
+	$tags = wp_get_post_tags($post);
+
+    if($tags != '') {
+    	$tag_ids = array();
+		foreach($tags as $individual_tag) {
+			$tag_ids[] = $individual_tag->term_id;
+		}
+
+    $query = new WP_Query(array(
+    		'post_type' => 'post',
+    		'showposts' => $number,
+     		'tag__in' => $tag_ids,
+                'category__in' => 28,
+		'post__not_in' => array($post)
+    		));
+	} else {
+		$query = new WP_Query(array(
+    		'post_type' => 'post',
+                'category__in' => 28,    
+    		'showposts' => $number
+    		));
+	}
+
+
+			
+	if($query->have_posts()){
+		
+		$return = '<ul id="gentle_latest_projects_jcarousel" class="jcarousel-skin-gentle-posts">';
+		$index = 0;
+		while($query->have_posts()) {
+			$query->the_post(); 
+			
+	
+			
+			if($index % 2 == 0 || $index == 0)
+				$return .= '<li><ul class="gentle_latest_posts"><li class="gentle-recent-post">';
+			else 
+				$return .= '<li class="gentle-recent-post">';
+			
+			$return .= '<div class="gentle-post-content">';
+			$return .= '<span class="recent-post-thumb"><a href="'.get_permalink().'" rel="bookmark">';
+							
+			if(has_post_thumbnail())
+				$return .= get_the_post_thumbnail(get_the_ID(), 'recent_post'); 
+						
+			$return .= '</a></span>';
+			$return .= '<div class="recent-post-title"><h5><a href="'.get_permalink().'">'.get_the_title().'</a></h5></div>';
+			
+			$return .= '<span class="gentle-post-meta">';
+			$return .= get_the_time('M d Y');
+			$return .= ' &middot; ';
+			 
+			$categories = get_the_category(get_the_ID());
+			$length = count($categories);
+			$i = 0;
+// 			print_r('<pre>');
+// print_r($category);
+// print_r('</pre>');
+			foreach($categories as $category) {
+				$return .= '<a href="'.get_category_link($category->cat_ID).'">';
+				$return .= $category->name;
+				$return .= '</a>';	
+				if($i != $length - 1)
+					$return .=', ';	
+					
+				$i++;
+			}
+
+			$return .= ' &middot; ';
+			$comments = get_comments_number('0 comments','1 comment','% comments');			
+			$return .= '<a href="'.get_comments_link().'">';
+			
+			if($comments == 0) {
+				$return .= '0 comments';
+			} elseif($comments > 1) {
+				$return .= $comments.' comments';
+			} elseif($comments == 1) {
+				$return .= '1 comment';
+			}
+			
+			$return .='</a>';
+			
+			$return .= '</span>';
+			if($sidebar_position == 'none')
+				$return .= '<p class="gentle-post-excerpt">'.gentle_my_excerpt(get_the_excerpt(), 14).'</p>';
+			else
+				$return .= '<p class="gentle-post-excerpt">'.gentle_my_excerpt(get_the_excerpt(), 20).'</p>';
+
+			$return .= '<span class="gentle-deco-line"></span></div>';
+			
+			if($index % 2 == 0 || $index == 0)
+				$return .= '</li>';
+			else 
+				$return .= '</li></ul></li>';
+
+			$index++; 
+
+		}  // end while 
+	}?>
+
+	 <script type="text/javascript">
+
+		jQuery(document).ready(function() {
+		    jQuery('#gentle_latest_activities_jcarousel').jcarousel({
+		    	wrap: 'circular',
+		    	scroll: <?php echo $scroll; ?>,
+		    	easing: 'easeOutExpo',
+		    	animation: 'slow',
+		    	buttonNextHTML: (parseInt('<?php echo $scroll + 1 ?>') >= parseInt('<?php echo $index ?>')) ? null : '<div></div>',
+			    buttonPrevHTML: (parseInt('<?php echo $scroll + 1 ?>') >= parseInt('<?php echo $index ?>')) ? null : '<div></div>'
+		    });
+		});
+	
+	</script>
+
+	<?php
+	wp_reset_query();
+	$return .= '</ul>';
+
+    $return = parse_shortcode_content($return);
+    return $return;
+}
+
+add_shortcode('mpc_recent_activities', 'mpc_recent_activities');
+
 /*-----------------------------------------------------------------------------------*/
 /*	1. Tabs Shortcode
 /*-----------------------------------------------------------------------------------*/
