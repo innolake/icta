@@ -1223,7 +1223,11 @@ th {
 
 .gentle-orange { color: #ff3c10; }
 
+#gentle_footer .rsg_item { float: left; height: 60px; margin-bottom: 7px; margin-right: 7px; opacity: 0.7; filter: alpha(opacity=70); overflow: hidden; position: relative; width: 60px; }
 
+#gentle_footer .rsg_item:hover { opacity: 1; filter: alpha(opacity=100);}
+
+#gentle_footer .rsg_item img { width: 100%; border-style: none; }
 /*-----------------------------------------------------------------------------------*/
 /*	Archives
 /*-----------------------------------------------------------------------------------*/
