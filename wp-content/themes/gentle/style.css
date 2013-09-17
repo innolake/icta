@@ -983,7 +983,7 @@ th {
 	width: 253px;
 	padding-left: 28px;
 	padding-bottom: 30px;
-	border-left: 1px solid #DDD;
+	border-left: 0px solid #DDD;
 	position: relative;
 	left: -1px;
 	background: #ffffff;
@@ -1041,7 +1041,7 @@ th {
 #gentle-aside.sidebar-left { 
 	padding-right: 28px;
 	padding-left: 0px;
-	border-right: 1px solid #DDD;
+	border-right: 0px solid #DDD;
 	border-left: none;
 	right: 0px;
 	left: 0px;
@@ -1417,8 +1417,7 @@ th {
 	#mpc-page-content.blog5 div.post p { margin-left: 0px!important; width: 100%!important; float: none!important;}
 }
 
-
-
+#wp-admin-bar-wp-logo { display: none; }
 
 
 
